@@ -37,16 +37,13 @@ namespace BookClassLibrary
             get { return _title; }
             set
             {
-                if (isTitleValid(Title))
-                {
-                    _title = value;
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+
+                _title = value;
+            
+               
                 
             }
+            
         }
 
         public string Author
@@ -60,14 +57,11 @@ namespace BookClassLibrary
             get { return _pages; }
             set
             {
-                if (isPageNumberValid(Pages))
+                if (isPageNumberValid(_pages))
                 {
                     _pages = value;
                 }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+               
                 
             }
         }
@@ -81,10 +75,7 @@ namespace BookClassLibrary
                 {
                     ISBN = value;
                 }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+               
                 
             }
         }
@@ -93,41 +84,11 @@ namespace BookClassLibrary
 
         #region verificationmethods
 
-        private bool isTitleValid(string input)
-        {
-            if (input.Length > 2)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public bool isTitleValid(string input) => input.Length > 2;
 
-        private bool isPageNumberValid(int input)
-        {
-            if (input > 9 && input < 1001)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public bool isPageNumberValid(int input) => input > 9 && input < 1001;
 
-        private bool isISBNValid(string input)
-        {
-            if (input.Length == 13)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public bool isISBNValid(string input) => input.Length == 13;
 
         #endregion
     }
