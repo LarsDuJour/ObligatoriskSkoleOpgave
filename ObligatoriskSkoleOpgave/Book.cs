@@ -37,11 +37,12 @@ namespace BookClassLibrary
             get { return _title; }
             set
             {
+                if (isTitleValid(value))
+                {
+                    _title = value;
+                }
 
-                _title = value;
-            
-               
-                
+
             }
             
         }
@@ -57,7 +58,7 @@ namespace BookClassLibrary
             get { return _pages; }
             set
             {
-                if (isPageNumberValid(_pages))
+                if (isPageNumberValid(value))
                 {
                     _pages = value;
                 }
@@ -71,7 +72,7 @@ namespace BookClassLibrary
             get { return ISBN; }
             set
             {
-                if (isISBNValid(ISBN))
+                if (isISBNValid(value))
                 {
                     ISBN = value;
                 }
