@@ -41,6 +41,10 @@ namespace BookClassLibrary
                 {
                     _title = value;
                 }
+                else
+                {
+                    throw new ArgumentException("Title is invalid.");
+                }
 
 
             }
@@ -62,8 +66,12 @@ namespace BookClassLibrary
                 {
                     _pages = value;
                 }
-               
-                
+                else
+                {
+                    throw new ArgumentException("Page number is invalid.");
+                }
+
+
             }
         }
 
@@ -76,8 +84,12 @@ namespace BookClassLibrary
                 {
                     ISBN = value;
                 }
-               
-                
+                else
+                {
+                    throw new ArgumentException("ISBN is invalid.");
+                }
+
+
             }
         }
         #endregion
